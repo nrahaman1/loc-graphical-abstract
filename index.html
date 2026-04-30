@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Global LOCs - 3D Abstract</title>
+    
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- 3D Libraries using robust CDNs without ES modules -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph@1.70.11/dist/3d-force-graph.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- UI Overlay: Header -->
+    <div id="header">
+        <h1>Global Pathogen Lines of Communication</h1>
+        <p>Interactive 3D Framework integrating Physical, Atmospheric, and Digital Vectors.</p>
+        <p class="hint">Click a category bubble to reveal its specific data nodes. Click and drag to rotate.</p>
+    </div>
+
+    <!-- UI Overlay: Top Controls -->
+    <div id="controls">
+        <button id="btn-collapse-all" class="control-btn">Collapse All</button>
+        <button id="btn-expand-all" class="control-btn">Expand All</button>
+    </div>
+
+    <!-- UI Overlay: Legend -->
+    <div id="legend">
+        <h3>LOC Categories</h3>
+        <ul>
+            <li><span class="color-box" style="background: #10b981;"></span> Biological</li>
+            <li><span class="color-box" style="background: #3b82f6;"></span> Atmospheric</li>
+            <li><span class="color-box" style="background: #f59e0b;"></span> Trade & Logistics</li>
+            <li><span class="color-box" style="background: #ec4899;"></span> Human & Operational</li>
+            <li><span class="color-box" style="background: #8b5cf6;"></span> Insect / Wildlife</li>
+            <li><span class="color-box" style="background: #ef4444;"></span> Destination</li>
+            <li><span class="color-box" style="background: #06b6d4;"></span> Hydrospheric</li>
+            <li><span class="color-box" style="background: #f43f5e;"></span> Cross-Dependencies</li>
+            <li><span class="color-box" style="background: #fcd34d;"></span> Bird Migration</li>
+            <li><span class="color-box" style="background: #84cc16;"></span> Soil / Terrestrial</li>
+            <li><span class="color-box" style="background: #fb923c;"></span> Generic Physical</li>
+        </ul>
+    </div>
+
+    <!-- UI Overlay: Glassmorphism Data Panel -->
+    <div id="data-panel" class="hidden">
+        <button id="close-panel">×</button>
+        <div id="node-tag">Category</div>
+        <h2 id="node-title">Node Title</h2>
+        
+        <div class="data-group">
+            <h3>Observable</h3>
+            <p id="node-observable">...</p>
+        </div>
+        
+        <div class="data-group">
+            <h3>Current Ability</h3>
+            <p id="node-ability">...</p>
+        </div>
+        
+        <div class="data-group warning">
+            <h3 id="node-gap-type">Gap Type</h3>
+            <p id="node-gap-desc">...</p>
+        </div>
+
+        <div class="data-group highlight">
+            <h3>Candidate Data</h3>
+            <p id="node-candidate">...</p>
+        </div>
+        
+        <div class="data-group">
+            <h3>Why it matters</h3>
+            <p id="node-why">...</p>
+        </div>
+        
+        <div class="data-group suggestion">
+            <h3>Future Development</h3>
+            <p id="node-future">...</p>
+        </div>
+    </div>
+
+    <!-- 3D Graph Container -->
+    <div id="3d-graph"></div>
+
+    <!-- Graph Logic -->
+    <script src="js/graph.js"></script>
+</body>
+</html>

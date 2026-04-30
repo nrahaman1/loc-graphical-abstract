@@ -1,0 +1,1038 @@
+{
+  "nodes": [
+    {
+      "id": "GLOBAL PATHOGEN SPREAD",
+      "group": 0,
+      "val": 30,
+      "label": "GLOBAL PATHOGEN SPREAD",
+      "description": "The complete interconnected framework of pathogen emergence, transport, and establishment."
+    },
+    {
+      "id": "LOC_Biological",
+      "group": 1,
+      "val": 25,
+      "label": "Biological",
+      "description": "Main Category: Biological"
+    },
+    {
+      "id": "node_4",
+      "group": 1,
+      "val": 10,
+      "label": "Infection buildup in vegetation",
+      "stage": "Emission",
+      "observable": "Active infection producing inoculum",
+      "current_ability": "Not observable",
+      "gap_type": "Observable gap",
+      "gap_desc": "Cannot detect real-time infection state globally",
+      "future_dev": "nan",
+      "why_matters": "Prevents identification of true source regions",
+      "candidate_data": "NDVI (indirect), host maps",
+      "priority": "nan"
+    },
+    {
+      "id": "node_5",
+      "group": 1,
+      "val": 10,
+      "label": "Spore release under drying + wind",
+      "stage": "Emission",
+      "observable": "Timing and magnitude of airborne inoculum release",
+      "current_ability": "Not observable",
+      "gap_type": "Scientific gap",
+      "gap_desc": "No emission functions linking biology + weather",
+      "future_dev": "nan",
+      "why_matters": "Cannot predict when spread begins",
+      "candidate_data": "ERA5, HRRR (partial proxies)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_6",
+      "group": 1,
+      "val": 10,
+      "label": "Host phenological transition",
+      "stage": "Emission",
+      "observable": "Host susceptibility window",
+      "current_ability": "Indirect",
+      "gap_type": "Observable gap",
+      "gap_desc": "Phenology not tied to pathogen lifecycle",
+      "future_dev": "nan",
+      "why_matters": "Weak source timing estimation",
+      "candidate_data": "MODIS phenology",
+      "priority": "nan"
+    },
+    {
+      "id": "node_7",
+      "group": 1,
+      "val": 10,
+      "label": "Meteorological triggering",
+      "stage": "Emission",
+      "observable": "Conditions enabling release (humidity, wind, rainfall)",
+      "current_ability": "Indirect",
+      "gap_type": "Sensor gap",
+      "gap_desc": "No direct coupling of weather \u2192 release",
+      "future_dev": "1. Measurements at both source and receptor regions\n2. Laboratory based experiments to study specific properties",
+      "why_matters": "Cannot parameterize emission",
+      "candidate_data": "ERA5, HRRR, NAM",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Atmospheric",
+      "group": 2,
+      "val": 25,
+      "label": "Atmospheric",
+      "description": "Main Category: Atmospheric"
+    },
+    {
+      "id": "node_10",
+      "group": 2,
+      "val": 10,
+      "label": "Air parcel movement",
+      "stage": "Transport",
+      "observable": "Transport pathways and trajectories",
+      "current_ability": "Strong",
+      "gap_type": "Scientific gap",
+      "gap_desc": "Biology treated as passive particles",
+      "future_dev": "1. Develop emission inventories",
+      "why_matters": "Overestimates spread accuracy",
+      "candidate_data": "HYSPLIT, FLEXPART, WRF-Chem",
+      "priority": "nan"
+    },
+    {
+      "id": "node_11",
+      "group": 2,
+      "val": 10,
+      "label": "Vertical lofting/ long distance transport",
+      "stage": "Transport",
+      "observable": "Plume height and distribution",
+      "current_ability": "Weak",
+      "gap_type": "Observable gap",
+      "gap_desc": "No biological plume structure data; \nmodel parameterizations need advancement; \naerosol-cloud-radiation interaction is one of the bigegst sources of uncertainties (relevant for spore production + survival + transport + deposition)",
+      "future_dev": "1. Multi-scale & Multi-dimensional Model -Measurement -Integration\n2. Model parameterization advancement/development for accurate representation of processes  to decrease model uncertainties and improve future predictions.",
+      "why_matters": "Cannot estimate long-range transport",
+      "candidate_data": "Lidar (limited)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_12",
+      "group": 2,
+      "val": 10,
+      "label": "Survival during transport",
+      "stage": "Transport",
+      "observable": "Pathogen viability in air",
+      "current_ability": "Not observable",
+      "gap_type": "Scientific gap",
+      "gap_desc": "No survival functions (UV, humidity, lightning)",
+      "future_dev": "nan",
+      "why_matters": "Major uncertainty in spread probability",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Trade",
+      "group": 3,
+      "val": 25,
+      "label": "Trade",
+      "description": "Main Category: Trade"
+    },
+    {
+      "id": "node_15",
+      "group": 3,
+      "val": 10,
+      "label": "Commodity movement between regions",
+      "stage": "Transport",
+      "observable": "Volume and direction of susceptible commodity flow",
+      "current_ability": "Indirect",
+      "gap_type": "Data gap",
+      "gap_desc": "Only country-level aggregation",
+      "future_dev": "nan",
+      "why_matters": "Cannot resolve pathway-level spread",
+      "candidate_data": "UN Comtrade",
+      "priority": "nan"
+    },
+    {
+      "id": "node_16",
+      "group": 3,
+      "val": 10,
+      "label": "Maritime shipping",
+      "stage": "Transport",
+      "observable": "Cargo movement along shipping routes",
+      "current_ability": "Indirect",
+      "gap_type": "Observable gap",
+      "gap_desc": "No linkage between cargo and pathogen",
+      "future_dev": "nan",
+      "why_matters": "Cannot identify high-risk flows",
+      "candidate_data": "AIS",
+      "priority": "nan"
+    },
+    {
+      "id": "node_17",
+      "group": 3,
+      "val": 10,
+      "label": "Contamination at origin",
+      "stage": "Emission",
+      "observable": "Presence of pathogen in shipped commodities",
+      "current_ability": "Not observable",
+      "gap_type": "Observable gap",
+      "gap_desc": "No contamination detection prior to shipment",
+      "future_dev": "nan",
+      "why_matters": "Cannot identify true source",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_18",
+      "group": 3,
+      "val": 10,
+      "label": "Cold-chain storage",
+      "stage": "Transport",
+      "observable": "Pathogen survival during transit",
+      "current_ability": "Not observable",
+      "gap_type": "Scientific gap",
+      "gap_desc": "No persistence modeling during transport",
+      "future_dev": "nan",
+      "why_matters": "Misestimates spread probability",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Physical",
+      "group": 12,
+      "val": 25,
+      "label": "Physical",
+      "description": "Main Category: Physical"
+    },
+    {
+      "id": "node_19",
+      "group": 12,
+      "val": 10,
+      "label": "Global road networks and land transit corridors",
+      "stage": "Network / Transit Vectors (Trade & Transport)",
+      "observable": "Global road networks and land transit corridors",
+      "current_ability": "GRIP4 Global Vector Roads, OpenStreetMap (OSM) - Highly detailed vector geometries (sub-meter accuracy); globally available.",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Does not indicate traffic volume or type of goods transported.\nNeeded: Freight-specific traffic density maps weighted by agricultural, livestock, and cold-chain transport.",
+      "future_dev": "nan",
+      "why_matters": "Physical land routes (trucking corridors) connecting infected farms to export ports or domestic markets.",
+      "candidate_data": "GRIP4 Global Vector Roads, OpenStreetMap (OSM)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_20",
+      "group": 12,
+      "val": 10,
+      "label": "Global maritime shipping corridors",
+      "stage": "Network / Transit Vectors (Trade & Transport)",
+      "observable": "Global maritime shipping corridors",
+      "current_ability": "Spire Maritime AIS, UN Global Platform AIS - Empirically tracks real vessel movements globally; high-frequency ping resolution (meters).",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Massive data volume; cannot differentiate cargo types directly from vessel pings.\nNeeded: Cargo-specific maritime tracking (linking vessel ID to bill of lading / reefer container manifests).",
+      "future_dev": "nan",
+      "why_matters": "Sea-based physical routes connecting export ports to import ports, modeling intercontinental spread.",
+      "candidate_data": "Spire Maritime AIS, UN Global Platform AIS",
+      "priority": "nan"
+    },
+    {
+      "id": "node_21",
+      "group": 12,
+      "val": 10,
+      "label": "Global aviation and air freight",
+      "stage": "Network / Transit Vectors (Trade & Transport)",
+      "observable": "Global aviation and air freight",
+      "current_ability": "OpenSky Network, FlightRadar24 - Live and historical flight paths globally (meter resolution).",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Flight data does not specify cargo contents.\nNeeded: Linking specific flights to agricultural/live cargo manifests and phytosanitary certificates.",
+      "future_dev": "nan",
+      "why_matters": "Rapid intercontinental transit vectors for perishable goods, vectors (insects in cargo), and human carriers.",
+      "candidate_data": "OpenSky Network, FlightRadar24",
+      "priority": "nan"
+    },
+    {
+      "id": "node_22",
+      "group": 12,
+      "val": 10,
+      "label": "Global logistics infrastructure (Ports/Hubs)",
+      "stage": "Network / Transit Vectors (Trade & Transport)",
+      "observable": "Global logistics infrastructure (Ports/Hubs)",
+      "current_ability": "World Port Index (WPI), Global Freight Routing Model (GFRM) - Exact point coordinates for global intermodal hubs.",
+      "gap_type": "Attribute / Field Missing",
+      "gap_desc": "Limitations: Lacks data on specific quarantine or phytosanitary inspection capacities at each port.\nNeeded: Throughput metrics for specific susceptible commodities and localized inspection failure rates.",
+      "future_dev": "nan",
+      "why_matters": "Nodes connecting land routes to sea/air routes. Essential for multimodal routing algorithms.",
+      "candidate_data": "World Port Index (WPI), Global Freight Routing Model (GFRM)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_23",
+      "group": 12,
+      "val": 10,
+      "label": "Global shipping and ocean transit density",
+      "stage": "Network / Transit Vectors (Trade & Transport)",
+      "observable": "Global shipping and ocean transit density",
+      "current_ability": "Global Shipping Traffic Density Rasters (2km resolution) - Global coverage; continuous density raster format makes it highly compatible with physical routing algorithms (like Dijkstra or MCP).",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Raster data does not differentiate vessel types (e.g., agricultural vs industrial) and assumes density correlates with probability of transit.\nNeeded: Commodity-specific routing density rasters (e.g., filtering only reefer/agricultural cargo ships).",
+      "future_dev": "nan",
+      "why_matters": "Provides continuous cost-surface maps (density grids) for calculating Least-Cost Paths (LCP) across oceans between exit and entry ports.",
+      "candidate_data": "Global Shipping Traffic Density Rasters (2km resolution)",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Human",
+      "group": 4,
+      "val": 25,
+      "label": "Human",
+      "description": "Main Category: Human"
+    },
+    {
+      "id": "node_27",
+      "group": 4,
+      "val": 10,
+      "label": "Agricultural labor movement",
+      "stage": "Transport",
+      "observable": "Movement of workers across agricultural regions",
+      "current_ability": "Indirect",
+      "gap_type": "Data gap",
+      "gap_desc": "Cannot isolate agricultural workforce mobility",
+      "future_dev": "nan",
+      "why_matters": "Misses key spread pathway",
+      "candidate_data": "Mobility datasets",
+      "priority": "nan"
+    },
+    {
+      "id": "node_28",
+      "group": 4,
+      "val": 10,
+      "label": "Equipment sharing",
+      "stage": "Spread",
+      "observable": "Cross-field contamination potential",
+      "current_ability": "Not observable",
+      "gap_type": "Observable gap",
+      "gap_desc": "No tracking of equipment movement",
+      "future_dev": "nan",
+      "why_matters": "Misses local spread dynamics",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_29",
+      "group": 12,
+      "val": 10,
+      "label": "High-resolution ambient human population distribution",
+      "stage": "Human & Fomite Movement",
+      "observable": "High-resolution ambient human population distribution",
+      "current_ability": "LandScan Global Population Database (Oak Ridge National Laboratory - ORNL) - Global coverage; exceptional high spatial resolution (~1 km / 30 arc-seconds); updated annually. Captures daytime/workday population distributions better than nighttime residential census data.",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: It is a static density map (average 24-hour period) rather than a dynamic mobility tracking dataset. It shows\u00a0where\u00a0people are, but not\u00a0where they are traveling to\u00a0(which is needed for mapping long-distance physical spread vectors).\nNeeded: Real-time, dynamic flow data coupling ambient population density with high-frequency rural-to-urban transit routes.",
+      "future_dev": "nan",
+      "why_matters": "Provides the ambient (24-hour average) population density, which helps estimate the sheer volume of human interaction, agricultural workforce density, and urban-rural interfaces where fomite transmission (via contaminated hands, clothing, or local vehicles) is most probable.",
+      "candidate_data": "LandScan Global Population Database (Oak Ridge National Laboratory - ORNL)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_36",
+      "group": 12,
+      "val": 10,
+      "label": "Initial outbreak locations / validated occurrences",
+      "stage": "Origin / Source Characterization",
+      "observable": "Initial outbreak locations / validated occurrences",
+      "current_ability": "CABI PlantwisePlus, EPPO Global Database, WAHIS (Animals), ProMED - High reliability; globally recognized standards for tracking.",
+      "gap_type": "Data Resolution / Granularity",
+      "gap_desc": "Limitations: Spatial resolution often limited to country or administrative region; severe reporting delays in developing nations.\nNeeded: Real-time, farm-level geolocated detection data and genomic sequencing to trace exact origin strains.",
+      "future_dev": "nan",
+      "why_matters": "Confirmed ground-truth starting points and historical emergence timelines for the physical spread of plant/animal pathogens.",
+      "candidate_data": "CABI PlantwisePlus, EPPO Global Database, WAHIS (Animals), ProMED",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Bird Migration",
+      "group": 10,
+      "val": 25,
+      "label": "Bird Migration",
+      "description": "Main Category: Bird Migration"
+    },
+    {
+      "id": "node_37",
+      "group": 10,
+      "val": 10,
+      "label": "Migration",
+      "stage": "Transport",
+      "observable": "nan",
+      "current_ability": "nan",
+      "gap_type": "nan",
+      "gap_desc": "nan",
+      "future_dev": "nan",
+      "why_matters": "nan",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_All",
+      "group": 6,
+      "val": 25,
+      "label": "All",
+      "description": "Main Category: All"
+    },
+    {
+      "id": "node_45",
+      "group": 6,
+      "val": 10,
+      "label": "Arrival of pathogen",
+      "stage": "Deposition",
+      "observable": "Deposition location and intensity",
+      "current_ability": "Indirect",
+      "gap_type": "Observable gap",
+      "gap_desc": "No biological deposition measurements",
+      "future_dev": "nan",
+      "why_matters": "Cannot link transport to impact",
+      "candidate_data": "Precipitation proxies",
+      "priority": "nan"
+    },
+    {
+      "id": "node_46",
+      "group": 6,
+      "val": 10,
+      "label": "Infection after arrival",
+      "stage": "Establishment",
+      "observable": "Viable dose and infection probability",
+      "current_ability": "Not observable",
+      "gap_type": "Scientific gap",
+      "gap_desc": "No dose-response relationships",
+      "future_dev": "nan",
+      "why_matters": "Cannot predict outbreak likelihood",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_47",
+      "group": 6,
+      "val": 10,
+      "label": "Host-pathogen interaction",
+      "stage": "Establishment",
+      "observable": "Susceptibility of host at time of arrival",
+      "current_ability": "Weak",
+      "gap_type": "Observable gap",
+      "gap_desc": "No real-time host vulnerability mapping",
+      "future_dev": "nan",
+      "why_matters": "Weak prediction accuracy",
+      "candidate_data": "RS-based vegetation indices, phenology",
+      "priority": "nan"
+    },
+    {
+      "id": "node_48",
+      "group": 6,
+      "val": 10,
+      "label": "Host crop presence",
+      "stage": "Establishment",
+      "observable": "Presence of a target host crop in the USA",
+      "current_ability": "Strong",
+      "gap_type": "Temporal resolution",
+      "gap_desc": "Data is released after the growing season (following year)",
+      "future_dev": "nan",
+      "why_matters": "Mapping areas with a particular target crop is key to defining the risk of pathogen establishment after its arrival",
+      "candidate_data": "Cropland Data Layer",
+      "priority": "nan"
+    },
+    {
+      "id": "node_49",
+      "group": 6,
+      "val": 10,
+      "label": "Host susceptibility",
+      "stage": "Establishment",
+      "observable": "Precense of a susceptible genotype",
+      "current_ability": "Weak",
+      "gap_type": "Observable gap",
+      "gap_desc": "No available data",
+      "future_dev": "nan",
+      "why_matters": "For some diseases, host susceptibility depends on the genotype/variety",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_50",
+      "group": 6,
+      "val": 10,
+      "label": "Alternative host presence",
+      "stage": "Establishment",
+      "observable": "Presence of alternative host for a particular pathogen",
+      "current_ability": "Weak",
+      "gap_type": "Observable gap",
+      "gap_desc": "No available data",
+      "future_dev": "nan",
+      "why_matters": "Alternative hosts, wich include other crops, weeds, and wild pants, can support the establishment of a pathogen even without the presence of the target host crop",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_51",
+      "group": 6,
+      "val": 10,
+      "label": "Host susceptibility",
+      "stage": "Establishment",
+      "observable": "Host phenological stage",
+      "current_ability": "Weak",
+      "gap_type": "Spatial resolution/reliability",
+      "gap_desc": "Data is available at the county level and does not provide sufficient detail for defining crop susceptibility",
+      "future_dev": "nan",
+      "why_matters": "Phenological stage is key to define host susceptibility",
+      "candidate_data": "USDA National Crop Progress",
+      "priority": "nan"
+    },
+    {
+      "id": "node_52",
+      "group": 6,
+      "val": 10,
+      "label": "Host susceptibility",
+      "stage": "Establishment",
+      "observable": "Host phenological stage",
+      "current_ability": "Weak",
+      "gap_type": "Reliability",
+      "gap_desc": "Converting vegetation indices into phenology metrics requires additional work and presents limitations in terms of accuracy",
+      "future_dev": "nan",
+      "why_matters": "Phenological stage is key to define host susceptibility",
+      "candidate_data": "EVI/NDVI obtained from satellites such as Sentinel-2 and HLS",
+      "priority": "nan"
+    },
+    {
+      "id": "node_53",
+      "group": 6,
+      "val": 10,
+      "label": "Host susceptibility",
+      "stage": "Establishment",
+      "observable": "Management practices",
+      "current_ability": "Weak",
+      "gap_type": "Observable gap",
+      "gap_desc": "No available data",
+      "future_dev": "nan",
+      "why_matters": "Management practices impact the susceptibility of a host",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_54",
+      "group": 6,
+      "val": 10,
+      "label": "Host susceptibility",
+      "stage": "Establishment",
+      "observable": "Previous biotic/abiotic stress",
+      "current_ability": "Moderate",
+      "gap_type": "Observable gap",
+      "gap_desc": "Water stress can be partially monitored using remote sensing, but other types of stress (previous disease/pest occurrence) can not be easily monitored",
+      "future_dev": "nan",
+      "why_matters": "Previous stress makes the crop more susceptible to new diseases",
+      "candidate_data": "ERA5, soil moisture datasets",
+      "priority": "nan"
+    },
+    {
+      "id": "node_55",
+      "group": 6,
+      "val": 10,
+      "label": "Enviromental conditions enabling infection",
+      "stage": "Establishment",
+      "observable": "Meteorological data",
+      "current_ability": "Strong",
+      "gap_type": "Spatial resolution",
+      "gap_desc": "Local variations may not be fully captured by the current datasets",
+      "future_dev": "nan",
+      "why_matters": "Meteorological conditions are important for assessing the risk of infection for a particular pathogen",
+      "candidate_data": "ERA5, NASA Power",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Information",
+      "group": 8,
+      "val": 25,
+      "label": "Information",
+      "description": "Main Category: Information"
+    },
+    {
+      "id": "node_58",
+      "group": 8,
+      "val": 10,
+      "label": "Field observation of unusual plant disease",
+      "stage": "Emission (signal emergence)",
+      "observable": "Early indication of abnormal plant health or pathogen presence",
+      "current_ability": "Indirect",
+      "gap_type": "Observable gap",
+      "gap_desc": "No structured capture of early field observations",
+      "future_dev": "nan",
+      "why_matters": "Delays detection of emerging threats",
+      "candidate_data": "Extension reports, farmer networks",
+      "priority": "nan"
+    },
+    {
+      "id": "node_59",
+      "group": 8,
+      "val": 10,
+      "label": "Scientific or diagnostic identification",
+      "stage": "Emission (signal emergence)",
+      "observable": "Detection of novel or known pathogens in labs",
+      "current_ability": "Partial",
+      "gap_type": "Data gap",
+      "gap_desc": "Lab results are delayed, fragmented, and not integrated",
+      "future_dev": "nan",
+      "why_matters": "Misses early confirmation of outbreaks",
+      "candidate_data": "Diagnostic labs, publications",
+      "priority": "nan"
+    },
+    {
+      "id": "node_60",
+      "group": 8,
+      "val": 10,
+      "label": "Informal communication between actors",
+      "stage": "Transport (signal propagation)",
+      "observable": "Spread of information through networks (farmers, agronomists, researchers)",
+      "current_ability": "Weak",
+      "gap_type": "Observable gap",
+      "gap_desc": "No tracking of informal information flow",
+      "future_dev": "nan",
+      "why_matters": "Early signals remain localized and unutilized",
+      "candidate_data": "Social media, field networks",
+      "priority": "nan"
+    },
+    {
+      "id": "node_61",
+      "group": 8,
+      "val": 10,
+      "label": "Formal reporting systems",
+      "stage": "Transport (signal propagation)",
+      "observable": "Reporting of outbreaks through official channels",
+      "current_ability": "Moderate",
+      "gap_type": "Data gap",
+      "gap_desc": "Reporting delays and underreporting",
+      "future_dev": "nan",
+      "why_matters": "Slows coordinated response",
+      "candidate_data": "ProMED, EPPO, CABI",
+      "priority": "nan"
+    },
+    {
+      "id": "node_62",
+      "group": 8,
+      "val": 10,
+      "label": "Aggregation of signals into actionable awareness",
+      "stage": "Deposition (signal consolidation)",
+      "observable": "Recognition of a pattern indicating an outbreak",
+      "current_ability": "Weak",
+      "gap_type": "Scientific gap",
+      "gap_desc": "No framework for integrating weak signals across sources",
+      "future_dev": "nan",
+      "why_matters": "Prevents early warning synthesis",
+      "candidate_data": "nan",
+      "priority": "nan"
+    },
+    {
+      "id": "node_63",
+      "group": 8,
+      "val": 10,
+      "label": "Anomaly emergence across signals",
+      "stage": "Detection / Transition",
+      "observable": "Deviations from baseline biological or reporting patterns",
+      "current_ability": "Weak",
+      "gap_type": "Scientific gap",
+      "gap_desc": "No baseline definition of \u201cnormal\u201d biological signal",
+      "future_dev": "nan",
+      "why_matters": "Cannot detect unknown threats",
+      "candidate_data": "OSINT, time-series monitoring",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Hydrospheric / Riverine",
+      "group": 7,
+      "val": 25,
+      "label": "Hydrospheric / Riverine",
+      "description": "Main Category: Hydrospheric / Riverine"
+    },
+    {
+      "id": "node_67",
+      "group": 7,
+      "val": 10,
+      "label": "Downstream movement of water-borne pathogens or contaminated agricultural runoff.",
+      "stage": "Transport",
+      "observable": "Physical routing and hydrological connectivity of drainage basins.",
+      "current_ability": "High-resolution global river networks and catchment boundary definitions exist.",
+      "gap_type": "Attribute / Dynamic Gap",
+      "gap_desc": "Limitations: Networks are static topological maps; they don't inherently provide real-time velocity or pathogen decay rates during transit. Needed: Real-time hydrological routing overlaid on static networks.",
+      "future_dev": "nan",
+      "why_matters": "Essential for tracing an upstream source of infection (e.g., infected farm runoff) to downstream susceptible agricultural regions.",
+      "candidate_data": "Global HydroSHEDS (Hydrological data and maps based on SHuttle Elevation Derivatives)",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Hydrospheric / Riverine & Coastal",
+      "group": 7,
+      "val": 25,
+      "label": "Hydrospheric / Riverine & Coastal",
+      "description": "Main Category: Hydrospheric / Riverine & Coastal"
+    },
+    {
+      "id": "node_68",
+      "group": 7,
+      "val": 10,
+      "label": "Proliferation of pathogens, algal blooms, or host vectors in major waterways and coastal zones.",
+      "stage": "Detection / Emission",
+      "observable": "Water color, turbidity, and hyperspectral biological signatures indicating outbreaks or high-risk conditions.",
+      "current_ability": "Space-borne hyperspectral sensors are highly capable of observing biological signatures in massive rivers, estuaries, and coastal zones.",
+      "gap_type": "Data Resolution / Granularity",
+      "gap_desc": "Limitations: Spatial resolution is too coarse for smaller agricultural tributaries/canals; optical sensors are blocked by clouds. Needed: High-resolution hyperspectral monitoring for narrow inland waterways.",
+      "future_dev": "nan",
+      "why_matters": "Serves as a direct proxy or early warning sign of aquatic biological instability, contamination events, or vector breeding grounds.",
+      "candidate_data": "NASA PACE satellite (Plankton, Aerosol, Cloud, ocean Ecosystem)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_69",
+      "group": 7,
+      "val": 10,
+      "label": "Extreme low flow conditions leading to high concentrations of pathogens in stagnant water.",
+      "stage": "Establishment / Concentration",
+      "observable": "River surface water elevation (stage) and discharge volume over time.",
+      "current_ability": "Spaceborne altimetry can accurately measure water surface elevation for medium-to-large rivers globally.",
+      "gap_type": "Temporal / Spatial Resolution Gap",
+      "gap_desc": "Limitations: Satellite revisit times can miss rapid drawdowns; altimeters struggle to measure narrow or highly braided streams. Needed: Continuous real-time integration of altimetry with terrestrial river gauges.",
+      "future_dev": "nan",
+      "why_matters": "Low flow conditions create high-risk stagnant pools for disease vectors (e.g., mosquitoes) and concentrate water-borne pathogens right when farmers are desperate to pump that water for irrigation.",
+      "candidate_data": "Spaceborne Altimeters (e.g., NASA/CNES SWOT - Surface Water and Ocean Topography, Sentinel-6)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_70",
+      "group": 12,
+      "val": 10,
+      "label": "Global host density (Cropland / Vegetation)",
+      "stage": "Origin / Source Characterization",
+      "observable": "Global host density (Cropland / Vegetation)",
+      "current_ability": "ESA WorldCover, Copernicus Global Land Service (CGLS) - Exceptional spatial resolution (10m to 100m); globally continuous and regularly updated.",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Identifies generic cropland but struggles to differentiate specific crop species on a global scale.\nNeeded: Dynamic, high-resolution global mapping of specific crop species and greenhouse infrastructure.",
+      "future_dev": "nan",
+      "why_matters": "Identifies Global high-density agricultural zones where plant pathogens originate or establish.",
+      "candidate_data": "ESA WorldCover, Copernicus Global Land Service (CGLS)",
+      "priority": "nan"
+    },
+    {
+      "id": "node_71",
+      "group": 12,
+      "val": 10,
+      "label": "Global host density (Cropland / Vegetation)",
+      "stage": "Origin / Source Characterization",
+      "observable": "Global host density (Cropland / Vegetation)",
+      "current_ability": "Google Dynamic World - Exceptional spatial resolution (10m); globally continuous and regularly updated.",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Identifies generic cropland but struggles to differentiate specific crop species on a global scale.\nNeeded: Dynamic, high-resolution global mapping of specific crop species and greenhouse infrastructure.",
+      "future_dev": "nan",
+      "why_matters": "Identifies Global high-density agricultural zones where plant pathogens originate or establish.",
+      "candidate_data": "Google Dynamic World",
+      "priority": "nan"
+    },
+    {
+      "id": "node_72",
+      "group": 12,
+      "val": 10,
+      "label": "Global host density (Livestock / Animals)",
+      "stage": "Origin / Source Characterization",
+      "observable": "Global host density (Livestock / Animals)",
+      "current_ability": "FAO Gridded Livestock of the World (GLW 4) - Global coverage; species-specific (cattle, poultry, swine). Resolution: ~10 km (0.083 degrees).",
+      "gap_type": "Data Resolution / Granularity",
+      "gap_desc": "Limitations: Static yearly datasets; coarse 10km resolution.\nNeeded: High-resolution, dynamic tracking of concentrated animal feeding operations (CAFOs) and pastoral movement.",
+      "future_dev": "nan",
+      "why_matters": "Identifies high-density livestock zones for zoonotic or animal-borne pathogens.",
+      "candidate_data": "FAO Gridded Livestock of the World (GLW 4)",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Soil",
+      "group": 11,
+      "val": 25,
+      "label": "Soil",
+      "description": "Main Category: Soil"
+    },
+    {
+      "id": "node_73",
+      "group": 11,
+      "val": 10,
+      "label": "Soil and terrain baselines (Soil-borne pathogens)",
+      "stage": "Destination / Establishment Susceptibility",
+      "observable": "Soil and terrain baselines (Soil-borne pathogens)",
+      "current_ability": "SoilGrids (ISRIC) - Global coverage; high resolution (250m).",
+      "gap_type": "Attribute / Coverage Missing",
+      "gap_desc": "Limitations: Static baseline; does not track real-time soil microbiomes.\nNeeded: Farm-level localized soil pathogen baselines and real-time soil health monitoring.",
+      "future_dev": "nan",
+      "why_matters": "Determines if soil conditions (pH, texture, moisture) at destination are conducive to establishment.",
+      "candidate_data": "SoilGrids (ISRIC)",
+      "priority": "nan"
+    },
+    {
+      "id": "LOC_Cross-Dependencies",
+      "group": 8,
+      "val": 25,
+      "label": "Cross-Dependencies",
+      "description": "Geopolitical and Information Cross-Dependencies"
+    },
+    {
+      "id": "node_seerist",
+      "group": 8,
+      "val": 20,
+      "label": "Disruption & Rerouting",
+      "stage": "Disruption & Rerouting",
+      "observable": "Socio-political instability, conflicts, or port strikes severing standard physical transport routes.",
+      "current_ability": "AI platforms can predict and detect political violence, protests, or border closures in real-time.",
+      "gap_type": "Data Integration Gap",
+      "gap_desc": "Limitations: Risk platforms track human/political events, not biological events.<br>Needed: Direct integration of risk API triggers with physical routing algorithms.",
+      "future_dev": "",
+      "why_matters": "Identifies when standard Lines of Communication break down, forcing trade through unregulated back-channels.",
+      "candidate_data": "Seerist API (Threat/Risk Intelligence)",
+      "priority": "High"
+    },
+    {
+      "id": "node_gdelt",
+      "group": 8,
+      "val": 20,
+      "label": "Amplification & Verification",
+      "stage": "Amplification & Verification",
+      "observable": "Media sentiment panics, localized reporting of crop failures, or food security riots preceding official biological declarations.",
+      "current_ability": "Massive global language scraping can detect localized sentiment shifts and news density in near real-time.",
+      "gap_type": "Biological Signal Latency Gap",
+      "gap_desc": "Limitations: News data is a lagging indicator for initial biological emergence.<br>Needed: Algorithms to filter out market noise and isolate specific crop-failure discussions as an early warning.",
+      "future_dev": "",
+      "why_matters": "Helps triangulate the actual spread of a pathogen by tracking the human socio-economic reaction rather than the physical virus itself.",
+      "candidate_data": "GDELT Project (Global Knowledge Graph / Events)",
+      "priority": "High"
+    }
+  ],
+  "links": [
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Biological"
+    },
+    {
+      "source": "LOC_Biological",
+      "target": "node_4"
+    },
+    {
+      "source": "LOC_Biological",
+      "target": "node_5"
+    },
+    {
+      "source": "LOC_Biological",
+      "target": "node_6"
+    },
+    {
+      "source": "LOC_Biological",
+      "target": "node_7"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Atmospheric"
+    },
+    {
+      "source": "LOC_Atmospheric",
+      "target": "node_10"
+    },
+    {
+      "source": "LOC_Atmospheric",
+      "target": "node_11"
+    },
+    {
+      "source": "LOC_Atmospheric",
+      "target": "node_12"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Trade"
+    },
+    {
+      "source": "LOC_Trade",
+      "target": "node_15"
+    },
+    {
+      "source": "LOC_Trade",
+      "target": "node_16"
+    },
+    {
+      "source": "LOC_Trade",
+      "target": "node_17"
+    },
+    {
+      "source": "LOC_Trade",
+      "target": "node_18"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Physical"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_19"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_20"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_21"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_22"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_23"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Human"
+    },
+    {
+      "source": "LOC_Human",
+      "target": "node_27"
+    },
+    {
+      "source": "LOC_Human",
+      "target": "node_28"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_29"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_36"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Bird Migration"
+    },
+    {
+      "source": "LOC_Bird Migration",
+      "target": "node_37"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_All"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_45"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_46"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_47"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_48"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_49"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_50"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_51"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_52"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_53"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_54"
+    },
+    {
+      "source": "LOC_All",
+      "target": "node_55"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Information"
+    },
+    {
+      "source": "LOC_Information",
+      "target": "node_58"
+    },
+    {
+      "source": "LOC_Information",
+      "target": "node_59"
+    },
+    {
+      "source": "LOC_Information",
+      "target": "node_60"
+    },
+    {
+      "source": "LOC_Information",
+      "target": "node_61"
+    },
+    {
+      "source": "LOC_Information",
+      "target": "node_62"
+    },
+    {
+      "source": "LOC_Information",
+      "target": "node_63"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Hydrospheric / Riverine"
+    },
+    {
+      "source": "LOC_Hydrospheric / Riverine",
+      "target": "node_67"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Hydrospheric / Riverine & Coastal"
+    },
+    {
+      "source": "LOC_Hydrospheric / Riverine & Coastal",
+      "target": "node_68"
+    },
+    {
+      "source": "LOC_Hydrospheric / Riverine",
+      "target": "node_69"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_70"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_71"
+    },
+    {
+      "source": "LOC_Physical",
+      "target": "node_72"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Soil"
+    },
+    {
+      "source": "LOC_Soil",
+      "target": "node_73"
+    },
+    {
+      "source": "GLOBAL PATHOGEN SPREAD",
+      "target": "LOC_Cross-Dependencies"
+    },
+    {
+      "source": "LOC_Cross-Dependencies",
+      "target": "node_seerist"
+    },
+    {
+      "source": "LOC_Cross-Dependencies",
+      "target": "node_gdelt"
+    }
+  ]
+}

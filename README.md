@@ -91,7 +91,6 @@ loc-graphical-abstract/
 This framework was developed to support the identification of **measurement gaps** in global biosurveillance infrastructure and to visualize candidate datasets that could close those gaps. The visualization was derived from a structured Excel master document (`COMBINED LOCs&Gaps.xlsx`) maintained by the research team.
 
 **Institution:** Mississippi State University  
-**Program:** DARPA — Global Biosurveillance / Pathogen Lines of Communication
 
 ---
 
